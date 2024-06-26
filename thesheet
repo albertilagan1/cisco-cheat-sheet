@@ -1,0 +1,43 @@
+!!Initial Switch Setup
+config t
+hostname m
+enable secret pass
+service password-encrypt
+no logging console
+no ip domain-lookup
+line cons 0
+login
+password m
+exec-timeout 0 0
+line vty 0 4
+password m
+login
+exec-timeout 0 0
+
+
+!!Configuring a Switch to give ip address (DHCP)
+config t
+vlan m
+name m
+exit
+ip dhcp excluded-add (IP range)
+ip dhcp pool vlanm (no space)
+network (ip and subnet)
+default router m
+domain-name m
+dns-server 8.8.8.8
+option 150 ip 1.1.1.1
+
+!!Make Sure the Device int Interface is conneced to the vlan to get IP
+conf t
+int em/m
+switchport mode access
+switchport access vlan m
+do sh vlan brief
+
+!!Now on the Device That Wants the IP from the Created DHCP
+config t
+int em/m
+ip add dhcp
+no shut
+do sh ip int brief | ex una

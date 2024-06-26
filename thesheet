@@ -44,10 +44,15 @@ do sh ip int brief | ex una
 
 !!How to Setup a NTP Server on a Cisco Router
 clock set HH:MM:SS MONTH DAY YEAR
+config t
 ntp master (strautum-level(3))
 end
 
 !!Other Router Resquesting Time From NTP Server
+!!Make sure there's a route if it's in another network
 config t
 ntp server (ip address of NTP Server)
+!!static route for next hop
+config t
+ip add (deviceIP, subent mask, next hop)
 

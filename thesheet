@@ -41,3 +41,13 @@ int em/m
 ip add dhcp
 no shut
 do sh ip int brief | ex una
+
+!!How to Setup a NTP Server on a Cisco Router
+clock set HH:MM:SS MONTH DAY YEAR
+ntp master (strautum-level(3))
+end
+
+!!Other Router Resquesting Time From NTP Server
+config t
+ntp server (ip address of NTP Server)
+

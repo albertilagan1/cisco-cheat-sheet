@@ -55,6 +55,6 @@ ntp server (ip address of NTP Server)
 !!static route for next hop
 !!Better to static route to the network, check the slash so you can do the correct subent mask, ending 0 ip is a network
 config t
-ip add (deviceIP, subent mask, next hop)
+ip route (destinationIP, subent mask, next hop)
 
 

@@ -23,7 +23,7 @@ exit
 ip dhcp excluded-add (IP range)
 ip dhcp pool vlanm (no space)
 network (ip and subnet)
-default-router m
+default-router
 domain-name m
 dns-server 8.8.8.8
 option 150 ip 1.1.1.1
@@ -42,9 +42,18 @@ ip add dhcp
 no shut
 do sh ip int brief | ex una
 
-!!How to Setup a NTP Server on a Cisco Router
+!!How to Setup a NTP Server on a Cisco 
+!!Make sure to remove existing ntp server (check commands)
+sh ntp status
+sh ntp associations
+!!remove commands
+no ntp server (m)
+no ntp master (1)
+
+Router
 clock set HH:MM:SS MONTH DAY YEAR
 config t
+ntp server (m)
 ntp master (strautum-level(3))
 end
 

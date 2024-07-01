@@ -73,4 +73,11 @@ ip route (destinationIP, subent mask, next hop)
 debug ntp packets
 undebug ntp packets
 
+!!how to create loopbacks manually
+config t
+int loopback m
+IP add m (subnet mask m)
+!!so what are loopbacks for?
+!!it can be used as a constant connection 
+
 

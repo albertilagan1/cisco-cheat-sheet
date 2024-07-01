@@ -46,6 +46,7 @@ do sh ip int brief | ex una
 !!Make sure to remove existing ntp server (check commands)
 sh ntp status
 sh ntp associations
+
 !!remove commands
 no ntp server (m)
 no ntp master (1)
@@ -61,9 +62,15 @@ end
 !!Make sure there's a route if it's in another network
 config t
 ntp server (ip address of NTP Server)
+
 !!static route for next hop
 !!Better to static route to the network, check the slash so you can do the correct subent mask, ending 0 ip is a network
+
 config t
 ip route (destinationIP, subent mask, next hop)
+
+!!if device is projecting wrobg time despite correct ntp associations then try this
+debug ntp packets
+undebug ntp packets
 
 

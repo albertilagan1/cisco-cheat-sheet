@@ -23,7 +23,7 @@ exit
 ip dhcp excluded-add (IP range)
 ip dhcp pool vlanm (no space)
 network (ip and subnet)
-default-router
+default-router m
 domain-name m
 dns-server 8.8.8.8
 option 150 ip 1.1.1.1

@@ -73,6 +73,24 @@ ip route (destinationIP, subent mask, next hop)
 debug ntp packets
 undebug ntp packets
 
+!!how to enable ssh
+config t
+IP domain-name m.com
+crypto generate rsa
+m (2048)
+aaa new-model
+username m privilege 15 secret m
+aaa authentication login default local
+line vty 0 4
+transport input ssh
+login authentication default
+exit
+IP ssh version 2
+IP ssh-timeout 60
+IP ssh authentication-retries 3
+exit
+write memory
+
 !!how to create loopbacks manually
 config t
 int loopback m

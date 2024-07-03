@@ -90,6 +90,8 @@ IP ssh-timeout 60
 IP ssh authentication-retries 3
 exit
 write memory
+!!how to connect to ssh externally 
+ssh -l (username) (ip)
 
 !!how to create loopbacks manually
 config t

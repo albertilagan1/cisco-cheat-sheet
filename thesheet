@@ -6,8 +6,8 @@ service password-encrypt
 no logging console
 no ip domain-lookup
 line cons 0
-login
 password m
+login
 exec-timeout 0 0
 line vty 0 4
 password m

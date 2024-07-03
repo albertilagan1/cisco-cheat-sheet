@@ -76,7 +76,7 @@ undebug ntp packets
 !!how to enable ssh
 config t
 IP domain-name m.com
-crypto generate rsa
+crypto key generate rsa
 m (2048)
 aaa new-model
 username m privilege 15 secret m

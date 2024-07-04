@@ -1,4 +1,4 @@
-!!Initial Switch Setup
+no!!Initial Switch Setup
 config t
 hostname m
 enable secret pass
@@ -100,4 +100,18 @@ IP add m (subnet mask m)
 !!so what are loopbacks for?
 !!it can be used as a constant connection 
 
-
+!!how to configure NAT on a Cisco router
+config t
+IP access-list standard m
+permit m
+permit m
+exit
+!!declare what is inside (the IP's that will be converted)
+int (desired cable) m
+IP nat inside
+exit
+!!declare where it will be going 
+int (desired cable) m
+IP nat outside 
+exit
+IP nat inside source list (access list standard name) interface (outside cable) overload

@@ -128,3 +128,10 @@ int m
 ipv6 add m
 !!sh ip int brief won't show it so you need to use the other command
 sh ipv6 int brief
+
+!!how to configure a default route on Cisco (default gateway)
+config t 
+IP route 0.0.0.0 0.0.0.0 (m)
+!!the 0's are just saying anything
+!!alright now how do you do it to an ipv6 
+IP route ::/0 (m)

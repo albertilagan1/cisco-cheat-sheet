@@ -116,3 +116,8 @@ IP nat outside
 exit
 IP nat inside source list (access list standard name) interface (outside cable) overload
 !!so the overload means change all IP's from the inside to the outbound interface cable's ip
+
+!!how do you confirm if the IP address are being translated properly
+sh ip nat translations 
+!!inside global means what the outside sees
+!!inside local, seeing what's within the nat router

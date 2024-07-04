@@ -115,3 +115,4 @@ int (desired cable) m
 IP nat outside 
 exit
 IP nat inside source list (access list standard name) interface (outside cable) overload
+!!so the overload means change all IP's from the inside to the outbound interface cable's ip

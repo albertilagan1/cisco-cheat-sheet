@@ -1,4 +1,4 @@
-no!!Initial Switch Setup
+!!Initial Switch Setup
 config t
 hostname m
 enable secret pass
@@ -121,3 +121,10 @@ IP nat inside source list (access list standard name) interface (outside cable) 
 sh ip nat translations 
 !!inside global means what the outside sees
 !!inside local, seeing what's within the nat router
+
+!!how to assign an ipv6 address onto a Cisco router interface
+config t
+int m 
+ipv6 add m
+!!sh ip int brief won't show it so you need to use the other command
+sh ipv6 int brief

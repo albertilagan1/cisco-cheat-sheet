@@ -135,3 +135,13 @@ IP route 0.0.0.0 0.0.0.0 (m)
 !!the 0's are just saying anything
 !!alright now how do you do it to an ipv6 
 IP route ::/0 (m)
+
+!!how to add ospf (open shortest path first) routing
+config t
+router ospf m
+router-id m.m.m.m
+network m.m.m.m (m.m.m.m wildcard) area m
+!!wildcard is just subnet mask inverted
+!!so /24 subnet mask 255.255.255.0
+!!just becomes 0.0.0.255
+!! now repeat these commands for each router/switch you want part of the ospf group
